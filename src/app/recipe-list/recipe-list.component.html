@@ -1,0 +1,8 @@
+<button (click)="fetchAndAssignRecipes()">Get Recipes!</button>
+
+<ng-container *ngIf="recipes">
+    <div *ngFor="let recipe of recipes" class="recipeSummary" [routerLink]="['/recipes', recipe.id]">
+        <h3>{{recipe.title}}</h3>
+        <p>{{recipe.description}}</p>
+    </div>
+</ng-container>
